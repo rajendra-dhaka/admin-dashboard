@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.admin-portal-home {
+  .main-card {
+    margin: 10px;
+    text-align: center;
+    .title {
+      background-color: rgb(25, 118, 210);
+      max-width: fit-content;
+      margin: auto;
+      padding: 10px;
+      color: #ffffff;
+      border-radius: 10px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      th,
+      td {
+        border: 1px solid #ccc;
+        padding: 8px;
+        text-align: left;
+      }
+
+      th {
+        background-color: #f2f2f2;
+      }
+      .cta {
+        display: flex;
+        gap: 20px;
+      }
+    }
+  }
+}
+
+// Actually modal is not in this hierarchical dom...Thats why we need to apply modal properties without nesting in any other element
+
+  .modal{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
