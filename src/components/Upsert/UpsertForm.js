@@ -1,14 +1,17 @@
 import { Button, Card } from "@mui/material";
 import { useState } from "react";
+import { useData } from "../../context/DataContext";
 import './UpsertForm.scss';
 
-export const UpsertForm = ({ user, onSave, onClose }) => {
+export const UpsertForm = ({  onSave }) => {
+  const { userData, editingUser,onModalClose,onAddUser,onUpdateUser } = useData();
+  
   const [formData, setFormData] = useState({
-    id:'',
+    id: +userData.at(-1).id + 1 ,
     name: '',
     email: '',
     role: 'member',
-     ...user ,
+     ...editingUser ,
   });
 
   const handleChange = (e) => {
@@ -17,6 +20,7 @@ export const UpsertForm = ({ user, onSave, onClose }) => {
       [e.target.name]: e.target.value
     });
   }
+
 
   return (
    <Card className='form-card'>
@@ -42,8 +46,8 @@ export const UpsertForm = ({ user, onSave, onClose }) => {
           </select>
         </label>
         <div className="cta">
-        <Button variant="contained" onClick={() => onSave(formData)}>Save</Button>
-        <Button variant="outlined" onClick={onClose}>Cancel</Button>
+        <Button variant="contained" onClick={() => editingUser === null ? onAddUser(formData):onUpdateUser(formData)}>Save</Button>
+        <Button variant="outlined" onClick={onModalClose}>Cancel</Button>
         </div>
         </form>
         </Card>

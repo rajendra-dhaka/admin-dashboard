@@ -15,24 +15,6 @@
       color: #ffffff;
       border-radius: 10px;
     }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      th,
-      td {
-        border: 1px solid #ccc;
-        padding: 8px;
-        text-align: left;
-      }
-
-      th {
-        background-color: #f2f2f2;
-      }
-      .cta {
-        display: flex;
-        gap: 20px;
-      }
-    }
   }
 }
 
@@ -42,4 +24,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  .pagination ul{
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
   }
