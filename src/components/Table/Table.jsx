@@ -46,7 +46,7 @@ export const Table = () => {
               </tr>
             ))
           : [0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((item) => (
-              <tr>
+              <tr key={item}>
                 <td>
                   <Skeleton variant='text' animation='wave' height={35} />
                 </td>
